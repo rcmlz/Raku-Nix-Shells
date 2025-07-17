@@ -24,6 +24,8 @@ in
       pkgs.zeromq
       (pkgs.jupyter-all.withPackages(ps: with ps; [
         distutils
+        pip
+        notebook
         jupyter-console
         jupytext
         jupyterlab-lsp
@@ -99,7 +101,11 @@ in
       echo ""
       echo "---------snip-----------"
       
-      echo starting jupyter lab
+      echo starting codium
+      codium -a . jupyter-chatbook.ipynb &
+
+      echo pause 5 seconds, then starting jupyter lab
+      sleep 5s
       jupyter-lab --notebook-dir=$HOME
     '';    
 }
