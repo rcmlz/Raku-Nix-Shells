@@ -106,6 +106,6 @@ in
 
       echo pause 5 seconds, then starting jupyter lab
       sleep 5s
-      jupyter-lab --notebook-dir=$HOME
+      jupyter-lab --notebook-dir=$HOME jupyter-chatbook.ipynb
     '';    
 }
