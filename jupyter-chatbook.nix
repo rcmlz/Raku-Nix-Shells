@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
 let
   # Your API keys
-  OPENAI  = "read https://raku.land/zef:antononcube/Jupyter::Chatbook";
+  OPENAI  = "browse https://platform.openai.com/api-keys";
+  MISTRAL  = "look at https://console.mistral.ai/api-keys";
   PALM = "find help at https://github.com/antononcube/Raku-Jupyter-Chatbook";
-  GEMINI  = "have a look at https://docs.raku.org";
-  MISTRAL  = "use https://course.raku.org/";
-  DEEPL  = "browse https://raku.org/getting-started/";
+  GEMINI  = "read https://raku.land/zef:antononcube/Jupyter::Chatbook";
+  DEEPL  =  "use https://course.raku.org/";
   WOLFRAM  = "visit https://rosettacode.org/wiki/Category:Raku";
 in
  pkgs.mkShellNoCC {
@@ -51,9 +51,9 @@ in
 
     # Set your API keys
     OPENAI_API_KEY = OPENAI;
+    MISTRAL_API_KEY  = MISTRAL;
     PALM_API_KEY = PALM;
     GEMINI_API_KEY  = GEMINI;
-    MISTRAL_API_KEY  = MISTRAL;
     DEEPL_AUTH_KEY  = DEEPL;
     WOLFRAM_ALPHA_API_KEY  = WOLFRAM;
     
