@@ -42,6 +42,6 @@
       #cat $RAKU_REQUIREMENTS | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef install \"$_\"" }'
       
       # all with one invocation of zef
-      cat $RAKU_REQUIREMENTS | raku -e 'with $*IN.lines.grep(/^^\w/).join("\" \"") { my $cmd = "zef install \"$_\""; say $cmd; shell "zef install \"$_\"" }'
+      cat $RAKU_REQUIREMENTS | raku -e 'with $*IN.lines.grep(/^^\w/).join("\" \"") { my $cmd = "zef install \"$_\""; say $cmd; shell $cmd }'
     '';
 }
