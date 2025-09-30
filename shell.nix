@@ -13,6 +13,6 @@
 
     shellHook = ''
       zef update
-      zef install Readline
+      zef install Readline --force-install
     '';    
 }
