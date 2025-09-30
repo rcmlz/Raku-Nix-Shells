@@ -1,3 +1,4 @@
+App::Mi6:ver<3.0.6>:auth<zef:skaji>
 App::Prove6:ver<0.0.17>:auth<cpan:LEONT>
 File::Find:ver<0.2.1>:auth<zef:raku-community-modules>
 Grammar::Profiler::Simple:ver<0.05>:auth<zef:raku-community-modules>
@@ -7,7 +8,6 @@ Terminal::ANSIParser:ver<0.0.4>:auth<zef:japhb>
 Term::termios:ver<0.2.8>:auth<zef:krunen>
 Readline:ver<0.1.8>:auth<zef:clarkema>
 
-#App::Mi6:ver<3.0.6>:auth<zef:skaji>
 #Terminal::LineEditor:ver<0.0.18>:auth<zef:japhb>
 #L10N:ver<0.0.2>:auth<zef:l10n>
 #App::Zef-Deps:ver<0.9.8>:auth<zef:coke>
