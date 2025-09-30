@@ -16,7 +16,7 @@ for example
 nix-shell jupyter-chatbook.nix
 ```
 
-will first setup Jupyter, Raku and the [Juypter-Chatbook](https://raku.land/zef:antononcube/Jupyter::Chatbook) kernel and then launch Jupyter Lab.
+will first setup Jupyter, Raku and the [Juypter-Chatbook](https://raku.land/zef:antononcube/Jupyter::Chatbook) kernel and then launch VS Codium and Jupyter Lab.
 
 ToDo:
 
