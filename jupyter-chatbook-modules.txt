@@ -1,1 +1,2 @@
-Jupyter::Chatbook:ver<0.3.4>:auth<zef:antononcube>:api<1>
+Jupyter::Chatbook:ver<0.3.5>:auth<zef:antononcube>:api<1>
+WWW::Ollama
