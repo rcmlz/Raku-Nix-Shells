@@ -1,11 +1,12 @@
 { pkgs ? import <nixpkgs> {} }:
 let
   # Your API keys
-  OPENAI  = "browse https://platform.openai.com/api-keys";
-  MISTRAL  = "look at https://console.mistral.ai/api-keys";
-  PALM = "find help at https://github.com/antononcube/Raku-Jupyter-Chatbook";
-  GEMINI  = "read https://raku.land/zef:antononcube/Jupyter::Chatbook";
   DEEPL  =  "use https://course.raku.org/";
+  GEMINI  = "read https://raku.land/zef:antononcube/Jupyter::Chatbook";
+  MISTRAL  = "look at https://console.mistral.ai/api-keys";
+  OLLAMA  = "visit https://ollama.com/settings/keys";
+  OPENAI  = "browse https://platform.openai.com/api-keys";
+  PALM = "find help at https://github.com/antononcube/Raku-Jupyter-Chatbook";
   WOLFRAM  = "visit https://rosettacode.org/wiki/Category:Raku";
 in
  pkgs.mkShellNoCC {
@@ -50,6 +51,7 @@ in
     ZEF_TEST_DEGREE = 4;
 
     # Set your API keys
+    OLLAMA_API_KEY = OLLAMA;
     OPENAI_API_KEY = OPENAI;
     MISTRAL_API_KEY  = MISTRAL;
     PALM_API_KEY = PALM;
@@ -80,11 +82,12 @@ in
       echo ""
       echo "######################################"
       echo "# API keys set:"
-      echo "# OPENAI: $OPENAI_API_KEY"
-      echo "# PALM: $PALM_API_KEY"
+      echo "# DEEPL: $DEEPL_AUTH_KEY"
       echo "# GEMINI: $GEMINI_API_KEY"
       echo "# MISTRAL: $MISTRAL_API_KEY"
-      echo "# DEEPL: $DEEPL_AUTH_KEY"
+      echo "# OPENAI: $OPENAI_API_KEY"
+      echo "# OLLAMA: $OLLAMA_API_KEY"
+      echo "# PALM: $PALM_API_KEY"
       echo "# WOLFRAM: $WOLFRAM_ALPHA_API_KEY"
       echo "######################################"
       echo ""
