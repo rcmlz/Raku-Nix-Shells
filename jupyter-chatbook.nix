@@ -61,7 +61,7 @@ in
       echo including $HOME/.raku/bin in PATH
       export PATH="$HOME/.raku/bin:$PATH"
 
-      export JUPYTER_KERNEL_DIR=$(jupyter --data)/kernels/raku            
+      export JUPYTER_KERNEL_DIR=$(jupyter --data)/kernels/raku-chatbook            
       if [ -d "$JUPYTER_KERNEL_DIR" ]; then
         echo "Skipping kernel creation and module installation, '$JUPYTER_KERNEL_DIR' already exists"
         echo "to trigger a fresh installation, delete the kernel directory: 'rm -rf $JUPYTER_KERNEL_DIR'"
@@ -74,7 +74,7 @@ in
         cat jupyter-chatbook-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef --serial --debug install \"$_\"" }'
       
         echo "Creating Raku kernel in path: '$JUPYTER_KERNEL_DIR'"
-        jupyter-chatbook.raku --generate-config
+        jupyter-chatbook.raku --generate-config --location=$JUPYTER_KERNEL_DIR
       fi
 
       echo ""
