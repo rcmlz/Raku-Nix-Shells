@@ -54,7 +54,7 @@
         zef update
         
         echo "installing Jupyter::Kernel:ver<1.0.3>:auth<zef:bduggan>"
-        zef --serial --debug install "Jupyter::Kernel:ver<1.0.3>:auth<zef:bduggan>"
+        zef --serial --debug install "Jupyter::Kernel:ver<1.0.4>:auth<zef:bduggan>"
       
         echo "Creating Raku kernel in path: '$JUPYTER_KERNEL_DIR'"
         raku-jupyter-kernel --generate-config --location=$JUPYTER_KERNEL_DIR
