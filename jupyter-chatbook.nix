@@ -74,7 +74,7 @@ in
         cat jupyter-chatbook-modules.txt | raku -e 'for $*IN.lines.grep(/^^\w/) { say shell "zef --serial --debug install \"$_\"" }'
       
         echo "Creating Raku kernel in path: '$JUPYTER_KERNEL_DIR'"
-        jupyter-chatbook.raku --generate-config --location=$JUPYTER_KERNEL_DIR
+        jupyter-chatbook-raku --generate-config --location=$JUPYTER_KERNEL_DIR
       fi
 
       echo ""
