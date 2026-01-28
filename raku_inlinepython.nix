@@ -1,5 +1,13 @@
 { pkgs ? import <nixpkgs> {} }:
 let
+  myPython = (pkgs.python3.withPackages (p: with p; [
+          numpy
+          matplotlib
+          pandas
+          requests
+          pip
+      ]));
+
   buildEnvPackages = [
       # https://nixos.wiki/wiki/Raku
       pkgs.rakudo
@@ -16,19 +24,13 @@ let
       pkgs.bzip2
       pkgs.openssl
       pkgs.ncurses
-      
-      (pkgs.python3.withPackages (p: with p; [
-          numpy
-          matplotlib
-          pandas
-          requests
-          pip
-      ]))
+      myPython
     ];
 in pkgs.mkShell {
     
     # search on https://raku.land
-    MODULE_TO_INSTALL = "Inline::Python";
+    MODULE_TO_INSTALL = "Inline::Python:ver<0.5>:auth<cpan:NINE>";
+    CUSTOM_INSTALL_FLAGS = "--exclude='python3'";
     
     packages = buildEnvPackages;
     buildInputs = buildEnvPackages;
@@ -44,6 +46,7 @@ in pkgs.mkShell {
       pkgs.libffi
       pkgs.bzip2
       pkgs.ncurses
+      myPython
     ];
 
     # Set zef environment variables
@@ -74,11 +77,11 @@ in pkgs.mkShell {
       zef update
 
       # install only dependencies
-      echo "executing: install --deps-only --debug $MODULE_TO_INSTALL --exclude='python3'"
-      zef install --deps-only --debug $MODULE_TO_INSTALL --exclude="python3"
+      echo "executing: zef install --debug --deps-only $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS" 
+      zef install --debug --deps-only $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS
       
-      # install module
-      echo "executing: install --debug $MODULE_TO_INSTALL --exclude='python3'"
-      zef install --debug $MODULE_TO_INSTALL --exclude="python3"
+      # install Module
+      echo "executing: zef install --debug $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS"
+      zef install --debug $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS
     '';
 }
