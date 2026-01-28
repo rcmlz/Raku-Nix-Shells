@@ -30,7 +30,7 @@
     # or: Cannot locate native library 'libssl.so': libssl.so: cannot open shared object file: No such file or directory
     # etc.
     LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ 
-      pkgs.readline70
+      pkgs.readline
       pkgs.openssl
       pkgs.zlib
       pkgs.zeromq
@@ -63,6 +63,6 @@
       #echo listing all jupyter paths
       #jupyter --paths
       
-      jupyter-lab --notebook-dir=$HOMEb
+      jupyter-lab --notebook-dir=$HOME
     '';
 }
