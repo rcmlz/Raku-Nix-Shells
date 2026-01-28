@@ -8,7 +8,7 @@ let
       pkgs.rakudo
       pkgs.zef
     ];
-in pkgs.mkShellNoCC {
+in pkgs.mkShell {
     
     # search on https://raku.land
     MODULE_TO_INSTALL = "LibXML:ver<0.10.19>:auth<zef:dwarring>:api<0.10.0>";

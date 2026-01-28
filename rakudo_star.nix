@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
- pkgs.mkShellNoCC {
+ pkgs.mkShell {
     packages = [
       pkgs.rakudo
       pkgs.zef

@@ -1,5 +1,5 @@
 { pkgs ? import <nixpkgs> {} }:
- pkgs.mkShellNoCC {
+ pkgs.mkShell {
     packages = [
       pkgs.git
       pkgs.curl

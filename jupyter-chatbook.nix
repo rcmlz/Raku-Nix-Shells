@@ -8,7 +8,7 @@ let
   DEEPL  =  "use https://course.raku.org/";
   WOLFRAM  = "visit https://rosettacode.org/wiki/Category:Raku";
 in
- pkgs.mkShellNoCC {
+ pkgs.mkShell {
     packages = [
       pkgs.git
       pkgs.curl
