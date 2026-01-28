@@ -8,3 +8,4 @@ lib/.precomp
 *.log
 
 .ipynb_checkpoints
+.DS_Store
