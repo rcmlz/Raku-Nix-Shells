@@ -1,6 +1,9 @@
 { pkgs ? import <nixpkgs> {} }:
 let
   buildEnvPackages = [
+      pkgs.curl
+      pkgs.wget
+      
       pkgs.gcc
       pkgs.gnumake
       pkgs.libxml2
@@ -11,7 +14,7 @@ let
 in pkgs.mkShell {
     
     # search on https://raku.land
-    MODULE_TO_INSTALL = "LibXML:ver<0.10.19>:auth<zef:dwarring>:api<0.10.0>";
+    MODULE_TO_INSTALL = "LibXML:ver<0.10.20>:auth<zef:dwarring>:api<0.10.0>";
     CUSTOM_INSTALL_FLAGS = "";
 #    CUSTOM_INSTALL_FLAGS = "--exclude='curl'";
 
@@ -44,7 +47,7 @@ in pkgs.mkShell {
       echo "executing: zef install --debug --deps-only $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS" 
       zef install --debug --deps-only $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS
       
-      # install Module
+      # install module
       echo "executing: zef install --debug $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS"
       zef install --debug $MODULE_TO_INSTALL $CUSTOM_INSTALL_FLAGS
     '';    
