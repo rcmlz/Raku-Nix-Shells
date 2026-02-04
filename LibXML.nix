@@ -14,7 +14,7 @@ let
 in pkgs.mkShell {
     
     # search on https://raku.land
-    MODULE_TO_INSTALL = "LibXML:ver<0.10.20>:auth<zef:dwarring>:api<0.10.0>";
+    MODULE_TO_INSTALL = "LibXML:ver<0.11.0>:auth<zef:dwarring>:api<0.11>";
     CUSTOM_INSTALL_FLAGS = "";
 #    CUSTOM_INSTALL_FLAGS = "--exclude='curl'";
 
